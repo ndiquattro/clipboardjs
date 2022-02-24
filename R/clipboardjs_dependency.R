@@ -1,3 +1,4 @@
+# Define dependencies for using clipboard.js
 clipboardjs_dependency <- function() {
   list(
     htmltools::htmlDependency(
@@ -8,7 +9,7 @@ clipboardjs_dependency <- function() {
     ),
     htmltools::htmlDependency(
       name    = "clipboardjs.js",
-      version = packageVersion("clipboardjs"),
+      version = utils::packageVersion("clipboardjs"),
       src = list(file = system.file("js", package = "clipboardjs")),
       script = "setup.js"
     )
