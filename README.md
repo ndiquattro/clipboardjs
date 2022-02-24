@@ -59,3 +59,6 @@ server <- function(input, output, session) {
 shinyApp(ui, server)
 ```
 
+## Related work
+* [rclipboard](https://github.com/sbihorel/rclipboard)
+* [shinyCopy2clipboard](https://github.com/deepanshu88/shinyCopy2clipboard)
