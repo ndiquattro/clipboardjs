@@ -2,6 +2,7 @@
 # clipboardjs
 
 <!-- badges: start -->
+[![R-CMD-check](https://github.com/ndiquattro/clipboardjs/workflows/R-CMD-check/badge.svg)](https://github.com/ndiquattro/clipboardjs/actions)
 <!-- badges: end -->
 
 The goal of clipboardjs is to wrap [clipboard.js](https://clipboardjs.com) for easy use in Shiny.
