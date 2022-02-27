@@ -33,8 +33,11 @@
 #'
 #'   shinyApp(ui, server)
 #' }
-copyButton <- function(id, target_id = NULL, text = NULL, label = "Copy", ...) {
+copyButton <- function(id, target_id = NULL, text = NULL, cut = FALSE,
+                       label = "Copy", ...) {
   check_args(target_id, text)
+
+  cut <- if (isTRUE(cut)) "cut" else NULL
 
   btn <-
     shiny::actionButton(
@@ -42,6 +45,7 @@ copyButton <- function(id, target_id = NULL, text = NULL, label = "Copy", ...) {
       label = label,
       `data-clipboard-target`= validate_target(target_id),
       `data-clipboard-text`= text,
+      `data-clipboard-action` = cut,
       class = "clippyjs",
       ...
     )

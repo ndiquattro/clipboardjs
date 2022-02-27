@@ -11,3 +11,7 @@ RoxygenNote: 7.1.2
 Imports: 
     htmltools,
     shiny
+Suggests: 
+    shinytest,
+    testthat (>= 3.0.0)
+Config/testthat/edition: 3

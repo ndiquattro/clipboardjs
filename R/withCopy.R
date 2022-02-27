@@ -25,15 +25,18 @@
 #'
 #'   shinyApp(ui, server)
 #' }
-withCopy <- function(x, target_id = NULL, text = NULL) {
+withCopy <- function(x, target_id = NULL, text = NULL, cut = FALSE) {
   check_args(target_id, text)
+
+  cut <- if (isTRUE(cut)) "cut" else NULL
 
   out <-
     htmltools::tagAppendAttributes(
     tag = x,
     class = "clippyjs",
     `data-clipboard-target`= validate_target(target_id),
-    `data-clipboard-text`= text
+    `data-clipboard-text`= text,
+    `data-clipboard-action` = cut
   )
 
   htmltools::tagList(out, clipboardjs_dependency())
