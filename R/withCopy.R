@@ -5,6 +5,7 @@
 #' @param x `actionButton` or `actionLink`.
 #' @param target_id The id of the UI output to copy.
 #' @param text Value to copy to the clipboard when the button is clicked.
+#' @param cut Cut text to clipboard.
 #'
 #' @return Updated button or link.
 #' @export

@@ -4,7 +4,7 @@
 \alias{copyButton}
 \title{Copy button}
 \usage{
-copyButton(id, target_id = NULL, text = NULL, label = "Copy", ...)
+copyButton(id, target_id = NULL, text = NULL, cut = FALSE, label = "Copy", ...)
 }
 \arguments{
 \item{id}{The \code{inputId} for the underlying \code{actionButton}.}
@@ -12,6 +12,8 @@ copyButton(id, target_id = NULL, text = NULL, label = "Copy", ...)
 \item{target_id}{The id of the UI output to copy.}
 
 \item{text}{Value to copy to the clipboard when the button is clicked.}
+
+\item{cut}{Cut text to clipboard.}
 
 \item{label}{Label of the button.}
 

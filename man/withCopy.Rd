@@ -4,7 +4,7 @@
 \alias{withCopy}
 \title{withCopy}
 \usage{
-withCopy(x, target_id = NULL, text = NULL)
+withCopy(x, target_id = NULL, text = NULL, cut = FALSE)
 }
 \arguments{
 \item{x}{\code{actionButton} or \code{actionLink}.}
@@ -12,6 +12,8 @@ withCopy(x, target_id = NULL, text = NULL)
 \item{target_id}{The id of the UI output to copy.}
 
 \item{text}{Value to copy to the clipboard when the button is clicked.}
+
+\item{cut}{Cut text to clipboard.}
 }
 \value{
 Updated button or link.
