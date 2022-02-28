@@ -43,4 +43,8 @@ jobs:
         with:
           extra-packages: rcmdcheck
 
+      - name: Install PhantomJS
+        run: if (!shinytest::dependenciesInstalled()) shinytest::installDependencies()
+        shell: Rscript {0}
+
       - uses: r-lib/actions/check-r-package@v1
