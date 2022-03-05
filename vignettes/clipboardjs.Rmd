@@ -1,0 +1,78 @@
+---
+title: "clipboardjs"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{clipboardjs}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(shiny)
+library(clipboardjs)
+```
+
+The goal of `clipboardjs` is to wrap [clipboard.js](www.clipboardjs.com) in an easy and low cost way for use in Shiny. You should be able to quickly add buttons or links that copy or cut the contents of other Outputs and server provided items. 
+
+Here, I'll give a brief tour of the functions available.
+
+## `withCopy()`
+
+This function adds the necessary tags to an existing button or link to enable it with copy functionality.
+
+```{r}
+test_ab <- actionButton("copy_1", "A copy button")
+
+print(test_ab)
+
+print(
+  withCopy(test_ab, text = "I will end up on the clipboard!")
+)
+```
+
+Note that the class `clippyjs` is added, which is how clipboard.js will know which buttons to watch.
+
+`withCopy()` is particularly useful if you want to add copy buttons that don't effect the reactive graph.
+
+```{r}
+print(
+  withCopy(tags$button(id = "cp1", "A low cost button"), text = "copied text")
+)
+```
+
+## `copyButton()`
+
+To quickly create a copy button with some sensible defaults use `copyButton()`.
+```{r}
+print(
+  copyButton("cp2", text = "This text shall move.")
+)
+```
+
+## `updateCopyText()`
+
+If you want to set the copied content from server-side, `updateCopyText()` will let you do that.
+
+```{r eval=FALSE}
+ui <- fluidPage(
+  copyButton("cp3", text = "You'll never see this!", label = "Copy from Server")
+)
+
+server <- function(input, output, session) {
+  # Server side copy
+  updateCopyText("cp3", "This has been updated from the server.")
+}
+```
+
+Note that setting `data.frame` like objects as copied text takes a little pre-processing to work as expected. The `pasteable()` function converts data.frames into a format that works well with spreadsheet targets.
+
+```{r}
+#pasteable(mtcars)
+```
