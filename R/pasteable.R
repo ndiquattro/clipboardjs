@@ -15,6 +15,9 @@
 #'
 #' # Fixed width output for sharing on slack or other markdown destination
 #' pasteable(mtcars, target = "chat")
+#'
+#' # Lists are simply converted
+#' pasteable(list(123, "abc", cool = "R"), target = "chat")
 pasteable <- function(x, target = c("sheet", "chat")) {
   UseMethod("pasteable", x)
 }
@@ -26,6 +29,17 @@ pasteable.data.frame <- function(x, target = c("sheet", "chat")) {
     "sheet" = df_to_sheet(x),
     "chat"  = df_to_chat(x)
   )
+}
+
+#' @export
+pasteable.list <- function(x, target = c("sheet", "chat")) {
+  target <- match.arg(target)
+
+  if (target == "sheet") {
+    return(paste(x, collapse = "\t"))
+  }
+
+  paste(x, collapse = ", ")
 }
 
 df_to_sheet <- function(x) {
