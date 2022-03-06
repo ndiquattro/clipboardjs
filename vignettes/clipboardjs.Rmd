@@ -19,7 +19,7 @@ library(shiny)
 library(clipboardjs)
 ```
 
-The goal of `clipboardjs` is to wrap [clipboard.js](www.clipboardjs.com) in an easy and low cost way for use in Shiny. You should be able to quickly add buttons or links that copy or cut the contents of other Outputs and server provided items. 
+The goal of `clipboardjs` is to wrap [clipboard.js](http://www.clipboardjs.com) in an easy and low cost way for use in Shiny. You should be able to quickly add buttons or links that copy or cut the contents of other Outputs and server provided items. 
 
 Here, I'll give a brief tour of the functions available.
 
@@ -49,7 +49,7 @@ print(
 
 ## `copyButton()`
 
-To quickly create a copy button with some sensible defaults use `copyButton()`.
+To quickly create a copy button with some sensible defaults use [`copyButton()`].
 ```{r}
 print(
   copyButton("cp2", text = "This text shall move.")
@@ -58,7 +58,7 @@ print(
 
 ## `updateCopyText()`
 
-If you want to set the copied content from server-side, `updateCopyText()` will let you do that.
+If you want to set the copied content from server-side, [`updateCopyText()`] will let you do that.
 
 ```{r eval=FALSE}
 ui <- fluidPage(
@@ -74,5 +74,5 @@ server <- function(input, output, session) {
 Note that setting `data.frame` like objects as copied text takes a little pre-processing to work as expected. The `pasteable()` function converts data.frames into a format that works well with spreadsheet targets.
 
 ```{r}
-#pasteable(mtcars)
+pasteable(mtcars)
 ```
