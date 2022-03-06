@@ -1,5 +1,5 @@
 Package: clipboardjs
-Title: Clipboardjs Wrapper
+Title: A Wrapper for Clipboard.js
 Version: 0.1.0
 Authors@R: 
     person("Nick", "DiQuattro", ,"ndiquattro@gmail.com", role = c("aut", "cre"))

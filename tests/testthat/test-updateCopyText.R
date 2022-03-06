@@ -4,5 +4,5 @@ test_that("updateCopyText works", {
 
   btn_html <- app$findWidget("cp3")$getHtml()
 
-  expect_match(btn_html, "data-clipboard-text=\"This has been updated from the server.\"")
+  expect_snapshot(btn_html)
 })

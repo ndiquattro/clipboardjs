@@ -4,7 +4,7 @@
 \name{clipboardjs-package}
 \alias{clipboardjs}
 \alias{clipboardjs-package}
-\title{clipboardjs: Clipboardjs Wrapper}
+\title{clipboardjs: A Wrapper for Clipboard.js}
 \description{
 Wraps the clipboard.js wrapper to make it easy to add "copy to clipboard" to Shiny apps.
 }
