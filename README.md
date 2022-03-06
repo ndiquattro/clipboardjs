@@ -3,6 +3,7 @@
 
 <!-- badges: start -->
 [![R-CMD-check](https://github.com/ndiquattro/clipboardjs/workflows/R-CMD-check/badge.svg)](https://github.com/ndiquattro/clipboardjs/actions)
+[![Codecov test coverage](https://codecov.io/gh/ndiquattro/clipboardjs/branch/main/graph/badge.svg)](https://app.codecov.io/gh/ndiquattro/clipboardjs?branch=main)
 <!-- badges: end -->
 
 The goal of clipboardjs is to wrap [clipboard.js](https://clipboardjs.com) for easy use in Shiny.
