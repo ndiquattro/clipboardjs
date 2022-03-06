@@ -1,4 +1,3 @@
-
 # clipboardjs
 
 <!-- badges: start -->
