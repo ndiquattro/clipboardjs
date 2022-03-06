@@ -4,5 +4,7 @@ test_that("updateCopyText works", {
 
   btn_html <- app$findWidget("cp3")$getHtml()
 
+  app$waitForShiny()
+
   expect_snapshot(btn_html)
 })
